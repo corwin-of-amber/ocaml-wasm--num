@@ -15,3 +15,5 @@ toplevel/META
 .merlin
 _build/
 num.install
+/bin
+*.tgz

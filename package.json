@@ -1,0 +1,7 @@
+{
+    "name": "@ocaml-wasm/4.08--num",
+    "version": "1.4.0",
+    "description": "The legacy Num library for arbitrary-precision integer and rational arithmetic (WASM port)",
+    "repository": "https://github.com/corwin-of-amber/num.git",
+    "files": ["bin"]
+}

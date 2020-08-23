@@ -1,0 +1,11 @@
+#source ~/var/ext/emsdk/emsdk_env.sh
+#emcc -g -Os -s SIDE_MODULE=1 -o dllnums.wasm -I ../../ocaml/runtime src/nat_stubs.c src/bng.c -DBNG_ARCH_generic
+
+CC="/opt/wasi-sdk/bin/clang -target wasm32-unknown-emscripten"
+WASI_INC="-include /tmp/wasi-kit-hijack/include/etc.h -I /tmp/wasi-kit-hijack/include"
+SHLIB="-nostdlib -Wl,--shared -Wl,--export-all"
+
+mkdir -p bin
+
+$CC -Os -fPIC src/nat_stubs.c src/bng.c -DBNG_ARCH_generic -I../../ocaml-4.08/runtime \
+    $WASI_INC $SHLIB -o bin/dllnums.wasm
