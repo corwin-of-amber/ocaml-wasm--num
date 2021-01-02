@@ -17,3 +17,5 @@ _build/
 num.install
 /bin
 *.tgz
+*.wasm
+*.wat
